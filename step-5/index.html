@@ -20,21 +20,23 @@
   <body ng-controller='Ctrl'>
     <div class="container">
       <ul class="nav nav-tabs">
-      <li class="active"><a href="#">Tout</a></li>
-      <li><a href="#">CIR3</a></li>
-      <li><a href="#">CIR2</a></li>
-      <li><a href="#">CIR1</a></li>
-      <li><a href="#">CSI3</a></li>
-      <li><a href="#">M1</a></li>
-    </ul>
+        <li class="active"><a href="#">Tout</a></li>
+        <li><a href="#">CIR3</a></li>
+        <li><a href="#">CIR2</a></li>
+        <li><a href="#">CIR1</a></li>
+        <li><a href="#">CSI3</a></li>
+        <li><a href="#">M1</a></li>
+      </ul>
+      <div class="row">
+        <input class="search-query" type="text" ng-model="search" placeholder="Search a student"></div>
     </div>
 
-    <input type="text" ng-model="search" placeholder="Search a student">
+
 
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4 student" ng-repeat="student in students | filter:search | orderBy:'class'">
-          <span class="glyphicon glyphicon-remove"></span>
+          <span ng-click="remove(student.name)" class="glyphicon glyphicon-remove"></span>
           <h2>{{student.name}}</h2>
           <p>{{student.class}}</p>
           <p>{{student.text}}</p>
