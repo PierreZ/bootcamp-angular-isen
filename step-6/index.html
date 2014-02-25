@@ -45,54 +45,18 @@
         </div><!-- /.row -->
 
         <hr>
-        <form class="form-horizontal">
-          <fieldset>
+    <form>
+        <h2>Add a student</h2>
 
-            <!-- Form Name -->
-            <legend>Create a student</legend>
+        <label for="nom">Name:</label>
+        <input type="text" name="nom" id="nom" ng-model="student.name"/>
+        <label for="class">class:</label>
+        <input type="class" name="class" id="class" ng-model="student.class"/>
+        <label for="text">Description:</label>
+        <input type="text" name="text" id="text" ng-model="student.text"/>
 
-            <!-- Text input-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="nameinput">Add a name</label>  
-              <div class="col-md-4">
-                <input id="nameinput" name="nameinput" type="text" placeholder="name" class="form-control input-md">
-                
-              </div>
-            </div>
-
-            <!-- Select Basic -->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="selectbasic">Select a class</label>
-              <div class="col-md-4">
-                <select id="selectbasic" name="selectbasic" class="form-control">
-                  <option value="1">CIR1</option>
-                  <option value="">CIR2</option>
-                  <option value="">CIR3</option>
-                  <option value="">CSI3</option>
-                  <option value="">M1</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- Text input-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="descriptioninput">Add a description</label>  
-              <div class="col-md-4">
-                <input id="descriptioninput" name="descriptioninput" type="text" placeholder="description" class="form-control input-md">
-                
-              </div>
-            </div>
-
-            <!-- Button -->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="addButton">Add</label>
-              <div class="col-md-4">
-                <button id="addButton" name="addButton" class="btn btn-primary">Add</button>
-              </div>
-            </div>
-
-          </fieldset>
-        </form>
+        <button type="button" class="btn btn-default navbar-btn" ng-click="addStudent()">Add</button>
+    </form>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
