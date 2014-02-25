@@ -14,11 +14,6 @@ myApp.controller('Ctrl', function ($scope) {
 		"class" : "CIR1" ,
 		"text" : "Seems like a weird guy"
 	});
-	$scope.students.push({ 
-		"name": "yolo",
-		"class" : "CIR1" ,
-		"text" : "Seems like a weird guy"
-	});
 
 	$scope.classes = new Array();
 
