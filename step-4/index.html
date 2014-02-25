@@ -1,54 +1,104 @@
 <!DOCTYPE html>
 <html lang="en" ng-app='studentApp'>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Students</title>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Students</title>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body ng-controller='Ctrl'>
-    <div class="container">
-      <ul class="nav nav-tabs">
-        <li class="active"><a href="#">Tout</a></li>
-        <li><a href="#">CIR3</a></li>
-        <li><a href="#">CIR2</a></li>
-        <li><a href="#">CIR1</a></li>
-        <li><a href="#">CSI3</a></li>
-        <li><a href="#">M1</a></li>
-      </ul>
-      <div class="row">
-        <input class="search-query" type="text" ng-model="search" placeholder="Search a student"></div>
-    </div>
+      <![endif]-->
+    </head>
+    <body ng-controller='Ctrl'>
+      <div class="container">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#">Tout</a></li>
+          <li><a href="#">CIR3</a></li>
+          <li><a href="#">CIR2</a></li>
+          <li><a href="#">CIR1</a></li>
+          <li><a href="#">CSI3</a></li>
+          <li><a href="#">M1</a></li>
+        </ul>
+        <div class="row">
+          <input class="search-query" type="text" ng-model="search" placeholder="Search a student"></div>
+        </div>
 
 
 
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-lg-4 student" ng-repeat="student in students | filter:search | orderBy:'class'">
-          <span class="glyphicon glyphicon-remove"></span>
-          <h2>{{student.name}}</h2>
-          <p>{{student.class}}</p>
-          <p>{{student.text}}</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+          <div class="col-lg-4 student" ng-repeat="student in students | filter:search | orderBy:'class'">
+            <span class="glyphicon glyphicon-remove"></span>
+            <h2>{{student.name}}</h2>
+            <p>{{student.class}}</p>
+            <p>{{student.text}}</p>
+            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="js/angular.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/app.js"></script>
-  </body>
-</html>
+        <hr>
+        <form class="form-horizontal">
+          <fieldset>
+
+            <!-- Form Name -->
+            <legend>Create a student</legend>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="nameinput">Add a name</label>  
+              <div class="col-md-4">
+                <input id="nameinput" name="nameinput" type="text" placeholder="name" class="form-control input-md">
+                
+              </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="selectbasic">Select a class</label>
+              <div class="col-md-4">
+                <select id="selectbasic" name="selectbasic" class="form-control">
+                  <option value="1">CIR1</option>
+                  <option value="">CIR2</option>
+                  <option value="">CIR3</option>
+                  <option value="">CSI3</option>
+                  <option value="">M1</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="descriptioninput">Add a description</label>  
+              <div class="col-md-4">
+                <input id="descriptioninput" name="descriptioninput" type="text" placeholder="description" class="form-control input-md">
+                
+              </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="addButton">Add</label>
+              <div class="col-md-4">
+                <button id="addButton" name="addButton" class="btn btn-primary">Add</button>
+              </div>
+            </div>
+
+          </fieldset>
+        </form>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="js/angular.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/app.js"></script>
+      </body>
+      </html>
