@@ -3,7 +3,7 @@ myApp.controller('Ctrl', function ($scope) {
 
 	$scope.selected="All"
 	$scope.students = new Array();
-	$scope.student = {};
+	$scope.new_student = {};
 	$scope.students.push({ 
 		"name": "Pierre Zemb",
 		"class" : "CIR3" ,
@@ -34,7 +34,7 @@ myApp.controller('Ctrl', function ($scope) {
     	});
     };
 	$scope.addStudent = function (){
-		$scope.students.push($scope.student);
+		$scope.students.push($scope.new_student);
     };
 
     $scope.setSelected = function (select){
